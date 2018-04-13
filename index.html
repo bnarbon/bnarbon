@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Este texto es el título del documento</title>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="js/funciones.js"></script>
+    
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    
+    
+    
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable( {
+            
+            "order":[[ 1,"desc" ]],
+            
+            "scrollY":        "200px",
+            "scrollCollapse": true,
+            "paging":         false,
+            
+            "language": {
+                "sProcessing":     "Procesando...",
+                "sLengthMenu":     "Mostrar _MENU_ registros",
+                "sZeroRecords":    "No se encontraron resultados",
+                "sEmptyTable":     "Ningún dato disponible en esta tabla",
+                "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix":    "",
+                "sSearch":         "Buscar:",
+                "sUrl":            "",
+                "sInfoThousands":  ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst":    "Primero",
+                    "sLast":     "Ultimo",
+                    "sNext":     "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            }
+            });
+        } );
+    </script>
+    
+</head>
+
+<section>
+    <table id="example">
+        <thead> 
+        <tr>
+            <th>NOMBRE</th>
+            <th>SUELDO</th>
+            <th>HORAS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Javier</td>
+            <td>3500</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Javier</td>
+            <td>3500</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Javier</td>
+            <td>3500</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Javier</td>
+            <td>3500</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Javier</td>
+            <td>3500</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Javier</td>
+            <td>3500</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Javier</td>
+            <td>3500</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Fran</td>
+            <td>2000</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>2500</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td>Mari</td>
+            <td>50</td>
+            <td>15</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table id="tablaVacia" class="display" width="100%"></table>
+</section>
+
+<body>
+    <div id="principal">
+        <p id="parrafo1">Este es el texto de mi primer mensaje.</p>
+        <p onclick="mensaje();"> Hacer Clic </p> <!-- onclick sirve para cuando pulsas enciama del texto llame a la funcion mensaje-->
+        <p onclick="muestraTexto();"> Cambiar texto.</p>
+        <p>No puede hacer clic</p>
+        
+        <br><br>
+        
+        <p id="nombre">Borja</p>
+        <p id="apellidos">Narbon Blasco</p>
+        <p id="nombreCompleto" onclick="concatenaNombre()"> Concatenar nombre.</p>
+        
+        <input id="num1" type="number" name="num1" placeholder="Variable 1">
+        <br>
+        <input id="num2" type="number" name="num2" placeholder="Variable 2">
+        <br>
+        <input type="submit" value="Sumar" class="boton" onclick="operacionSuma();">
+        <input type="submit" value="Restar" class="boton" onclick="operacionResta();">
+        <br><br>
+        <input type="submit" value="Multiplicacion" class="boton" onclick="operacionMultiplicacion();">
+        <input type="submit" value="Division" class="boton" onclick="operacionDivision();">
+        <br><br>
+        <input type="submit" value="Exponencial" class="boton" onclick="operacionExponencial();">
+        <input type="submit" value="ParImpar" class="boton" onclick="operacionParImpar();">
+        <br>
+        Resultado:
+        <p id ="resultado"></p>
+        <p id = "resto"></p>
+        <br>
+        <p id = "parImpar1"></p>
+        <p id = "parImpar2"></p>
+        <br><br><br><br>
+        
+        <p>Listado coches: <a onclick="muestraCoches();"><strong>(mostrar lista)</strong></a></p>
+        <p id = "listadoCoches"></p>
+         <p id = "listadoCochesRapido"></p>
+        <br><br>
+        
+        <p onclick="compararPeso();"><strong>Comparar pesos.</strong></p>
+        <p id = "gente"></p>
+        
+        <br><br>
+        <p onclick="ponerNota();"><strong>Mostrar notas.</strong></p>
+        <p id = "alumnoSuspenso"></p>
+        <p id = "alumnoApto"></p>
+        <p id = "alumnoBien"></p>
+        <p id = "alumnoNotable"></p>
+        <p id = "alumnoSobresaliente"></p>
+        <p id = "alumnoMatricula"></p>
+        
+        <p onclick="masTrabaja();"><strong>Empleado mas trabajador:</strong></p>
+        <p id = "empleadoMasTrabaja"></p>
+        
+        <p onclick="menosCobra();"><strong>Salario minimio:</strong></p>
+        <p id = "salarioMinimo"></p>
+        
+        <p onclick="sueldoMedio();"><strong>Salario medio:</strong></p>
+        <p id = "mediaSueldo"></p>
+        
+    
+        
+    </div>
+</body>
+
+</html> 
